@@ -26,3 +26,4 @@ pip install setuptools==59.5.0
 cp -r .\depersonalization\* .\yolov7
 cp -r .\participants\ .\yolov7
 ```
+После этого запустите блокнот yolov7/train_detect_getSolution.ipynb и следуйте инструкциям в нём
