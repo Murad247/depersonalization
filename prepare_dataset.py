@@ -15,7 +15,6 @@ import albumentations as A
 from PIL import Image
 from PIL import ImageStat
 from tqdm import tqdm
-import yaml
 
 parser = argparse.ArgumentParser()
 
@@ -37,17 +36,14 @@ os.mkdir(x_test_dir)
 os.makedirs(y_train_dir)
 os.mkdir(y_test_dir)
 
-yaml_content = """\
+yaml_content = """
 train: ./data/images/train/
 val: ./data/images/test/
 
 nc: 5
 
 names: ['car', 'head', 'face', 'human', 'carplate']"""
-
-with open('./data_for_yolo/dataset.yaml', 'w') as f:
-    yaml.dump(yaml_content, f)
-    
+   
 
 src_x_train_dir = f"{args.data_dir}/train/images"
 img_names = os.listdir(src_x_train_dir)
